@@ -1,0 +1,27 @@
+<%- include('partials/header') -%>
+    <main>
+        <h1 class="title">
+            <%= listTitle %>
+        </h1>
+        <div class="list-container">
+            <ul>
+                <% for (let item of list) { %>
+                    <form action="/<%=listTitle%>?_method=DELETE" method="POST">
+                        <div class="item-box">
+                            <input type="checkbox" class="checkbox" name="checkbox" value="<%=item._id%>"
+                                onChange="this.form.submit()">
+                            <li class="items">
+                                <%= item.name %>
+                            </li>
+                            <input type="hidden" name="listName" value="<%=listTitle%>"></input>
+                        </div>
+                    </form>
+                    <% } %>
+            </ul>
+            <form action="/<%=listTitle%>" method="POST" class="new-form">
+                <input class="todoInput" type="text" name="items[name]" placeholder="New To Do">
+                <button class="submit-button">+</button>
+            </form>
+        </div>
+    </main>
+    <%- include('partials/footer') -%>

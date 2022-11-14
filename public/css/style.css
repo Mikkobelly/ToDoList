@@ -1,0 +1,149 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("https://img.88tph.com/p1/production/20180612/12553154.jpg");
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(91, 91, 91);
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* ---centered text--- */
+.title,
+.new-form {
+    text-align: center;
+}
+
+/* ---border, box-shadow style--- */
+.title,
+.list-container {
+    border-radius: 8px;
+}
+
+.title,
+.list-container,
+.submit-button {
+    box-shadow: 5px 5px 5px lightgrey;
+}
+
+/* ---purple bg, white font color--- */
+.title,
+.submit-button {
+    background-color: rgb(170, 141, 251);
+    color: white;
+}
+
+
+main {
+    min-width: 30%;
+    max-width: 90%;
+    margin: 5% 0 0;
+}
+
+.title {
+    padding: 10px 45px;
+    margin: 0;
+}
+
+.list-container {
+    background-color: white;
+    line-height: 3;
+    padding: 5%;
+    margin: 10% 0 10%;
+}
+
+ul {
+    list-style: none;
+    padding: 0 20px;
+}
+
+input:checked+li {
+    text-decoration: line-through;
+    text-decoration-color: rgb(170, 141, 251);
+}
+
+.items {
+    display: inline-block;
+}
+
+.item-box {
+    border-bottom: solid rgba(190, 190, 190, 0.795) 1px;
+}
+
+.todoInput {
+    width: 250px;
+    border: 0;
+    outline: 0;
+    font-size: 1.5rem;
+}
+
+/* .todoInput:focus {
+    text-decoration: underline;
+    text-decoration-color: rgb(170, 141, 251);
+} */
+
+.todoInput:focus,
+input::-webkit-input-placeholder {
+    color: rgb(91, 91, 91);
+}
+
+.submit-button {
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+    padding: 5px 12px;
+    margin-left: 20px;
+}
+
+.submit-button:hover {
+    background-color: rgb(215, 215, 252);
+    cursor: pointer;
+}
+
+.switch {
+    color: rgb(170, 141, 251);
+    display: inline-block;
+    font-size: small;
+    letter-spacing: 1px;
+    margin-left: 20px;
+}
+
+footer {
+    color: rgb(142, 142, 142);
+}
+
+
+
+@Media (max-width: 1165px) {
+    main {
+        max-width: 70%;
+    }
+}
+
+@Media (max-width: 500px) {
+    main {
+        max-width: 95%;
+    }
+
+    .title,
+    .submit-button,
+    input::-webkit-input-placeholder {
+        font-size: 1rem;
+    }
+
+    .todoInput {
+        width: 150px;
+    }
+
+    .submit-button {
+        padding: 3px 10px;
+    }
+}
