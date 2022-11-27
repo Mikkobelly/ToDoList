@@ -9,6 +9,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-image: url("https://img.88tph.com/p1/production/20180612/12553154.jpg");
+    background-size: cover;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(91, 91, 91);
     letter-spacing: 2px;
