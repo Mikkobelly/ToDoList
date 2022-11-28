@@ -1,3 +1,6 @@
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -18,11 +21,11 @@ const defaultItems = [
     }
 ];
 
-const DBUrl = "mongodb+srv://Mikkobelly:Test123@cluster0.loq7cjn.mongodb.net/todolistDB";
+const dbUrl = process.env.DBUrl || "mongodb://127.0.0.1/todolistDB";
 
 main().catch(err => console.log(err));
 async function main() {
-    await mongoose.connect(DBUrl || "mongodb://localhost:27017/todolistDB");
+    await mongoose.connect(dbUrl);
     console.log("Database connected")
 }
 
